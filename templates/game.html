@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Let's play!</title>
+</head>
+
+<body>
+    <h3>Dear {{person}}, let's play madlib.</h3>
+    <h2>Instructions: </h2>
+    <ol>
+        <li>Fill the form with initial words.</li>
+        <li>Press "Madlib it!" and see the output.</li>
+    </ol>
+
+    <form action="/madlib">
+        <input type="hidden" name="person" value={{person}}>
+        Color <input type="text" name="color">
+        <p>Noun <input type="text" name="noun"></p>
+        <p>Adjective <input type="text" name="adj"></p>
+        <p><input type="submit" value="Madlib it!"></p>
+    </form>
+
+</body>
+</html>
