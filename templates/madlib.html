@@ -1,27 +1,12 @@
-<!doctype html>
-<html>
-<head>
-  <title>Let's play!</title>
-  <link rel="stylesheet" href="/static/madlibs.css">
-</head>
-<body>
+{% extends '_base_story.html' %}
 
-    <h2> Mad <b>{{person}}</b> poem should starts like that: </h2>
-    <p class="blue-shield">
-    There once was a <b>{{ color }} {{ noun }}</b> sitting in the Hackbright Lab.
-    <br>
-    When <b>{{ person }}</b> went to pick it up, it burst into flames in a totally
-    <b>{{ adjective }}</b> way. </p>
-
-    {% if list_of_values %}
-    <ul>
-      {% for animal in list_of_values %}
-      <li> {{ animal }}</li>
+{% block content %}
+  {% if story %}
+      {% for part in story %}
+        {{ part[0] }} {{ part[1] }}
       {% endfor %}
-    </ul>
-    {% endif %}
+  {% endif %}
+<p>This is all about {{ story[0][1] }} </p>
 
-    <a href="/hello">Play</a> again. 
 
-</body>
-</html>
+{% endblock %} 

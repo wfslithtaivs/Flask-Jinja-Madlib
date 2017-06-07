@@ -65,16 +65,27 @@ def show_madlib():
     clr = request.args.get("color")
     nn = request.args.get("noun")
     adj = request.args.get("adj")
-
-    # boogers
-
     animals = request.args.getlist("animals")
 
+    # which_template = choice([story1, story2])
+
+    stories = {
+                "initial": ["There once was a", "Nothing happens with"],
+                "what_next": ["sitting in the Hackbright Lab.", "laying on the floor."],
+                "problem": ["When", "Until", "While", "Unexpectadly"],
+                "ending": ["went to pick it up, it burst into flames in a totally",
+                "run out screaming", "flew away with cookies"]
+               }
+
+    story_parts = [
+                  [choice(stories.get("initial")), player],
+                  [clr, choice(stories.get("what_next"))],
+                  [choice(stories.get("problem")), nn],
+                  [choice(stories.get("ending")), adj + " way."]
+                  ]
+
     return render_template("madlib.html",
-                           person=player,
-                           color=clr,
-                           noun=nn,
-                           adjective=adj,
+                           story=story_parts,
                            list_of_values=animals)
 
 
