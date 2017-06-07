@@ -13,6 +13,14 @@
     When <b>{{ person }}</b> went to pick it up, it burst into flames in a totally
     <b>{{ adjective }}</b> way. </p>
 
+    {% if list_of_values %}
+    <ul>
+      {% for animal in list_of_values %}
+      <li> {{ animal }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <a href="/hello">Play</a> again. 
 
 </body>

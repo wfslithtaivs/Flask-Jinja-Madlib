@@ -1,9 +1,10 @@
      
-p.blue-shield {
-  font-family:  "Times New Roman", Times, serif;
-  font-style: italic;
-  background-color: lightblue;
-  text-align: center;
-  width: 400px;
+p.blue-shield 
+  {
+    font-family:  "Times New Roman", Times, serif;
+    font-style: italic;
+    background-color: lightblue;
+    text-align: center;
+    width: 400px;
 
-}
+  }

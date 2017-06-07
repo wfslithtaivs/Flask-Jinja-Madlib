@@ -66,11 +66,16 @@ def show_madlib():
     nn = request.args.get("noun")
     adj = request.args.get("adj")
 
+    # boogers
+
+    animals = request.args.getlist("animals")
+
     return render_template("madlib.html",
                            person=player,
                            color=clr,
                            noun=nn,
-                           adjective=adj)
+                           adjective=adj,
+                           list_of_values=animals)
 
 
 if __name__ == '__main__':
